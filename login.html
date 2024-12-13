@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wardrobe</title>
+    <title>Login-Wardrobe</title>
     <style>
     body{
         background-color: #474747;
@@ -47,48 +47,42 @@
 
     <div class="inputs">
         <label for="">
-            <input type="email" name="" id="inp" class="input" placeholder="Enter your Email/gmail">
+            <input type="email" name="" id="mail" class="input" placeholder="Enter your Email/gmail" required>
             <br>
             <br>
-            <input type="text" name="" id="inp" class="input" placeholder="Enter your Password">
+            <input type="text" name="" id="pass" class="input" placeholder="Enter your Password" required>
             <br>
             <br>
-            <input type="" name="" id="inp" class="input" placeholder="dd/mm/yy">
+            <input type="" name="" id="birth" class="input" placeholder="dd/mm/yy" required>
             <br>
             <br>
-            <input type="text" name="" id="inp" class="input" placeholder="Enter your City">
+            <input type="text" name="" id="City" class="input" placeholder="Enter your City" required>
             <br>
             <br>
         </label>
         <div class="but">
-            <button onclick="button()">Enter</button>
+            <button onclick="validateAndRedirect()">Login</button>
         </div>
 
-        <script>
-            function button() {
-
-let allCity = ["Karachi", "Lahore", "Islamabad", "Hyderabad", "Peshawar", "Quetta"];
-let userCity = document.getElementById("Inputid").value;
-
-let myCard = "City did not  Matched!";
-let mySecondCard = "City is Matched! ";
-
-let cityMatched = false;
-
-for(let i = 0; i < allCity.length; i++){
-    if(userCity == allCity[i]){
-        cityMatched = true;
-        break;
-    }
-}
-
-    if(cityMatched == false){
-        document.getElementById("card").innerText = myCard; 
-    }else{
-        document.getElementById("card").innerText = mySecondCard;
-    }
-}
-        </script>
     </div>
+
+    <script>
+        function validateAndRedirect() {
+
+            let email = document.getElementById(`mail`).value
+            let pass = document.getElementById(`pass`).value
+            let birth = document.getElementById('birth').value;
+            let city = document.getElementById('City').value;
+
+            if (!email || !password || !birth || !city) {
+                alert('Please fill all the fields before submitting!');
+                return;
+            }
+
+            if (confirm('Successfully logged in. Click OK to go to the homepage.')) {
+                window.location.href = 'index.html';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -37,7 +37,10 @@ header{
 
 #Home:hover{
     color: #171717;
-    background-color:  rgb(255, 128, 0);
+    background-color:  rgb(255, 0, 43);
+    color: white;
+    font-weight: bolder;
+    text-shadow: 1px 1px 10px white;
     transition: all ease-in-out 0.3s;
 }
 
@@ -69,6 +72,13 @@ header{
     text-align: start;
     background-color: #272727;
     color: white;
+}
+
+#search:hover{
+    color: black;
+    background-color: white;
+    transition: all 0.3s ease-in;
+    /* font-weight: bolder; */
 }
 
 .list{
@@ -181,18 +191,10 @@ header{
     font-family: sans-serif;
 }
 
-button a{
-    text-decoration: none;
-    color: white;
-}
 
-button:hover{
+.log:hover{
     /* color: orangered; */
     background-color: white;
     transition: all 0.3s ease-in-out;
-}
-
-button a:hover{
     color: orangered;
-    transition: all 0.3s ease-in-out;
 }
